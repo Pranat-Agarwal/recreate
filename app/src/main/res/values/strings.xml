@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">recreate</string>
+    <string name="hint_entername">enter your name</string>
 </resources>
