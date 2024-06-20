@@ -1,37 +1,15 @@
-package com.example.recreate.java;
+package com.example.recreate.java
 
-public class student {
-    String name;
-    int age;
-    String pa;
-
-    public student(String name, int age, String pa){
-        this.name=name;
-        this.age=age;
-        this.pa=pa;
+class student(var name: String, var age: Int, var pa: String) {
+    fun setName() {
+        this.name = name
     }
 
-    public String getName(){
-        return name;
+    fun setAge() {
+        this.age = age
     }
 
-    public void setName(){
-        this.name=name;
-    }
-
-    public int getAge(){
-        return age;
-    }
-
-    public void setAge(){
-        this.age=age;
-    }
-
-    public String getPa(){
-        return pa;
-    }
-
-    public void setPa(){
-        this.pa=pa;
+    fun setPa() {
+        this.pa = pa
     }
 }
