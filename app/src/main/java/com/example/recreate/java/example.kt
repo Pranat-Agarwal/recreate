@@ -9,4 +9,5 @@ fun main(){
     var e : employee=employee("pranat",21,"meerut")
     println(e.getName())
     println(e.name)
+
 }
