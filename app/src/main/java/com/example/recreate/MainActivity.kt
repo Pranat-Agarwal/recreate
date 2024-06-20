@@ -36,4 +36,5 @@ class MainActivity : AppCompatActivity() {
     fun alarm(view: View){
         var intent:Intent=Intent(Intent.ACTION_QUICK_CLOCK)
     }
+
 }
