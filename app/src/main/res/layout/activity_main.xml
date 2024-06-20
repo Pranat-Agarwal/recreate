@@ -5,30 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/black"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="387dp"
-        android:layout_height="180dp"
-        android:layout_marginTop="164dp"
-        android:text=" Happy Birthday "
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="65dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.333"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="283dp"
-        android:layout_height="287dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:srcCompat="@drawable/istockphoto_1096339366_612x612" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+    />
