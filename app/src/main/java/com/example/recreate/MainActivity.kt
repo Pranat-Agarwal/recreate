@@ -1,63 +1,39 @@
-package com.example.cargo
+package com.example.recreate
 
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
-import android.util.Log
 import android.view.View
-import android.widget.Button
-import android.widget.EditText
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
 class MainActivity : AppCompatActivity() {
-    var tag="main"
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
-        Log.i(tag,"create")
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
     }
-
-    override fun onStart() {
-        super.onStart()
-        Log.i(tag,"start")
+    fun phone(view: View){
+        var intent:Intent=Intent(Intent.ACTION_DIAL,Uri.parse("tel:7302708153"))
+        startActivity(intent)
     }
 
-    override fun onStop() {
-        super.onStop()
-        Log.e(tag,"stop")
-    }
-    override fun onDestroy() {
-        super.onDestroy()
-        Log.d(tag,"destroy")
+    fun web(view: View){
+        var intent:Intent=Intent(Intent.ACTION_VIEW,Uri.parse("http://www.google.com"))
     }
 
-    override fun onPause() {
-        super.onPause()
-        Log.w(tag,"pause")
+    fun cal(view: View){
+        var intent:Intent=Intent(Intent.ACTION_DATE_CHANGED)
     }
 
-    fun myclick (view: View){
-        var h =Intent(this, homeactivity::class.java)
-        h.putExtra("nkey","value")
-        startActivity(h)
-    }
-
-
-    fun inf(){
-        var un = EditText(this)
-        un.setHint("enter")
-        var p = EditText(this)
-        p.setHint("enter")
-        var b =Button(this)
-        b.setText("log")
-
+    fun alarm(view: View){
+        var intent:Intent=Intent(Intent.ACTION_QUICK_CLOCK)
     }
 }

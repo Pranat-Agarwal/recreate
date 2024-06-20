@@ -7,57 +7,47 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <EditText
-        android:id="@+id/editTextText"
-        android:layout_width="334dp"
-        android:layout_height="55dp"
-        android:ems="10"
-        android:hint="Username"
-        android:inputType="text"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
+    <Button
+        android:id="@+id/alarmb"
+        android:layout_width="144dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="120dp"
+        android:text="Alarm"
+        android:onClick="alarm"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.636" />
-
-    <EditText
-        android:id="@+id/editTextTextPassword"
-        android:layout_width="334dp"
-        android:layout_height="63dp"
-        android:layout_marginTop="36dp"
-        android:ems="10"
-        android:hint="password"
-        android:inputType="textPassword"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText"
-        app:layout_constraintVertical_bias="0.02" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="login"
-        android:onClick="myclick"
-        app:layout_constraintBottom_toTopOf="@+id/button2"
+        android:id="@+id/phoneb"
+        android:layout_width="155dp"
+        android:layout_height="102dp"
+        android:layout_marginTop="116dp"
+        android:layout_marginEnd="36dp"
+        android:text="phone"
+        android:onClick="phone"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword"
-        app:layout_constraintVertical_bias="0.695" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:text="Sign up"
+        android:id="@+id/googleb"
+        android:layout_width="151dp"
+        android:layout_height="130dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginBottom="180dp"
+        android:text="web"
+        android:onClick="web"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent" />
 
+    <Button
+        android:id="@+id/calanderb"
+        android:layout_width="138dp"
+        android:layout_height="119dp"
+        android:layout_marginEnd="36dp"
+        android:layout_marginBottom="188dp"
+        android:text="calander"
+        android:onClick="cal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
