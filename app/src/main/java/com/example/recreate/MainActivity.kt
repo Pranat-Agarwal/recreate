@@ -1,10 +1,14 @@
 package com.example.recreate
 
 import android.os.Bundle
+import android.provider.Settings.Global
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
+import java.io.IOException
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,5 +28,16 @@ class MainActivity : AppCompatActivity() {
 
     fun gettemp(city:String):Int{
         return 25
+    }
+
+    private fun getmarsphotos(){
+        GlobalScope.launch {
+            marsUistate=try{
+                val listResult = MarsApi.retrofitService.getPhotos()
+                MarsUiState.Success(listResult)
+            }catch(e:IOException){
+                MarsUiState.Error
+            }
+        }
     }
 }
