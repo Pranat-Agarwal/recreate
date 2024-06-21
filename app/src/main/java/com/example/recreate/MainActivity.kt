@@ -4,10 +4,12 @@ import android.os.Bundle
 import android.provider.Settings.Global
 import android.util.Log
 import android.view.View
+import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.recreate.network.marsapi
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import java.io.IOException
@@ -34,8 +36,9 @@ class MainActivity : AppCompatActivity() {
 
     private fun getmarsphotos(){
         GlobalScope.launch {
-            var jasonString = MarsApi.retrofitService.getPhotos()
-            Log.i("MainActivity",jasonString)
+            var listmmarsphotos = marsapi.retrofitservice.getPhotos()
+            Log.i("MainActivity",listmmarsphotos.size.toString())
+            Log.i("MainActivity-url",listmmarsphotos.get(1).imgsrc)
         }
     }
 
