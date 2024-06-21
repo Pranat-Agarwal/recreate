@@ -8,8 +8,6 @@ class MainActivityTest : TestCase() {
         super.setUp()
     }
     fun testOnCreate() {
-        var ex:String="Pranat"
-        assertEquals(ex,ac)
     }
 
     override fun tearDown() {

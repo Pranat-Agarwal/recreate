@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="languages">
+        <item>English</item>
+        <item>Hindi</item>
+        <item>urdu</item>
+        <item>punjai</item>
+        <item>malyalam</item>
+        <item>sanskrit</item>
+        <item>telgu</item>
+        <item>kannada</item>
+        <item>bangla</item>
+    </string-array>
+    <string-array name="countries">
+        <item>india</item>
+        <item>usa</item>
+        <item>australia</item>
+        <item>india</item>
+        <item>india</item>
+        <item>india</item>
+    </string-array>
+</resources>
