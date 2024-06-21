@@ -17,6 +17,12 @@ interface marsapiservice{
 
     suspend fun getPhotos():String
 }
+
+object marsapi{
+    val retrofitservice : marsapiservice by lazy{
+        retrofit.create(marsapiservice::class.java)
+    }
+}
 fun main(){
 
 }

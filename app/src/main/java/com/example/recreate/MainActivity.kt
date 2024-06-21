@@ -2,6 +2,8 @@ package com.example.recreate
 
 import android.os.Bundle
 import android.provider.Settings.Global
+import android.util.Log
+import android.view.View
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -32,12 +34,12 @@ class MainActivity : AppCompatActivity() {
 
     private fun getmarsphotos(){
         GlobalScope.launch {
-            marsUistate=try{
-                val listResult = MarsApi.retrofitService.getPhotos()
-                MarsUiState.Success(listResult)
-            }catch(e:IOException){
-                MarsUiState.Error
-            }
+            var jasonString = MarsApi.retrofitService.getPhotos()
+            Log.i("MainActivity",jasonString)
         }
+    }
+
+    fun getjson(view: View){
+        getmarsphotos()
     }
 }
