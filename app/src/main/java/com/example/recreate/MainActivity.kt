@@ -25,6 +25,9 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         marsrecyclerview=findViewById(R.id.recyclerview)
         marsrecyclerview.layoutManager=LinearLayoutManager(this)
+        photos=ArrayList()
+        marsadpater=adpater(photos)
+        marsrecyclerview.adapter=marsadpater
         //marsadpater=adpater(photos)
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
@@ -45,10 +48,11 @@ class MainActivity : AppCompatActivity() {
     private fun getmarsphotos(){
         GlobalScope.launch {
             var listmmarsphotos = marsapi.retrofitservice.getPhotos()
+            photos=listmmarsphotos
+            marsadpater.notifyDataSetChanged()
             Log.i("MainActivity",listmmarsphotos.size.toString())
             Log.i("MainActivity-url",listmmarsphotos.get(1).imgsrc)
-            marsadpater=adpater(listmmarsphotos)
-            marsrecyclerview.adapter=marsadpater
+
         }
     }
 
