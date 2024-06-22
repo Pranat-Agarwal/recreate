@@ -48,7 +48,7 @@ class MainActivity : AppCompatActivity() {
     private fun getmarsphotos(){
         GlobalScope.launch {
             var listmmarsphotos = marsapi.retrofitservice.getPhotos()
-            photos=listmmarsphotos
+            marsadpater.listmmarsphotos=listmmarsphotos
             marsadpater.notifyDataSetChanged()
             Log.i("MainActivity",listmmarsphotos.size.toString())
             Log.i("MainActivity-url",listmmarsphotos.get(1).imgsrc)
