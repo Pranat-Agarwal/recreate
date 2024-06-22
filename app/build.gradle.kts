@@ -2,6 +2,7 @@ plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
     id("org.jetbrains.kotlin.plugin.serialization")version "1.8.10"
+    id("kotlin-kapt")
 }
 
 android {
@@ -9,9 +10,9 @@ android {
     compileSdk = 34
 
     buildFeatures{
-        viewBinding=true
-        dataBinding=true
+        viewBinding = true
     }
+
     defaultConfig {
         applicationId = "com.example.recreate"
         minSdk = 24
@@ -42,6 +43,10 @@ android {
 
 dependencies {
 
+    implementation("androidx.room:room-common:2.6.8")
+    implementation("androidx.room:room-ktx:2.6.0")
+    kapt("androidx.room:room-compiler:2.6.0")
+
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
@@ -50,16 +55,5 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
-
-    implementation("com.squareup.retrofit2:retrofit:2.9.0")
-
-    implementation("com.jakewharton.retrofit:retrofit2-kotlin-serialization-converter:1.0.0")
-    implementation("com.square.okhttp3:okhttp:4.11.0")
-
-    implementation("org.jetbrains.kotlin:kotlinx-serialization-json:1.5.1")
-
-    implementation("com.squareup.moshi:moshi-kotlin:1.13.0")
-    implementation("com.squareup.retrofit2:converter-moshi:2.9.0")
-    implementation("io.coil-kt:coil:1.1.1")
 
 }
