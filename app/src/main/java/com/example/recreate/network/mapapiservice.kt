@@ -28,6 +28,3 @@ object marsapi{
         retrofit.create(marsapiservice::class.java)
     }
 }
-fun main(){
-
-}

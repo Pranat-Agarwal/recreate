@@ -8,6 +8,10 @@ android {
     namespace = "com.example.recreate"
     compileSdk = 34
 
+    buildFeatures{
+        viewBinding=true
+        dataBinding=true
+    }
     defaultConfig {
         applicationId = "com.example.recreate"
         minSdk = 24
