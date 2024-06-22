@@ -1,9 +1,9 @@
 package com.example.recreate.network
 
-import kotlinx.serialization.Serializable 
-@Serializable
+import com.squareup.moshi.Json
+
 data class marsphoto (
     val id:String,
-    @SerialName(value="imag_src")
+    @Json(name="img_src")
     val imgsrc:String
 )

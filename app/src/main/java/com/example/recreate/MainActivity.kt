@@ -3,12 +3,14 @@ package com.example.recreate
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.ImageView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import coil.load
 import com.example.recreate.network.marsapi
 import com.example.recreate.network.marsphoto
 import kotlinx.coroutines.GlobalScope
@@ -19,10 +21,12 @@ class MainActivity : AppCompatActivity() {
     lateinit var marsrecyclerview:RecyclerView
     lateinit var marsadpater:adpater
     lateinit var photos:List<marsphoto>
+    lateinit var imageview:ImageView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
+        imageview=findViewById(R.id.imageView)
         marsrecyclerview=findViewById(R.id.recyclerview)
         marsrecyclerview.layoutManager=LinearLayoutManager(this)
         photos=ArrayList()
@@ -49,6 +53,7 @@ class MainActivity : AppCompatActivity() {
         GlobalScope.launch {
             var listmmarsphotos = marsapi.retrofitservice.getPhotos()
             marsadpater.listmmarsphotos=listmmarsphotos
+            imageview.load(listmmarsphotos.get(0).imgsrc )
             marsadpater.notifyDataSetChanged()
             Log.i("MainActivity",listmmarsphotos.size.toString())
             Log.i("MainActivity-url",listmmarsphotos.get(1).imgsrc)
