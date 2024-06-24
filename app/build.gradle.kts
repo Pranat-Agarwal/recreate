@@ -1,17 +1,11 @@
 plugins {
-    id("com.android.application")
-    id("org.jetbrains.kotlin.android")
-    id("org.jetbrains.kotlin.plugin.serialization")version "1.8.10"
-    id("kotlin-kapt")
+    alias(libs.plugins.android.application)
+    alias(libs.plugins.jetbrains.kotlin.android)
 }
 
 android {
     namespace = "com.example.recreate"
     compileSdk = 34
-
-    buildFeatures{
-        viewBinding = true
-    }
 
     defaultConfig {
         applicationId = "com.example.recreate"
@@ -43,9 +37,7 @@ android {
 
 dependencies {
 
-    implementation("androidx.room:room-common:2.6.8")
-    implementation("androidx.room:room-ktx:2.6.0")
-    kapt("androidx.room:room-compiler:2.6.0")
+
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
