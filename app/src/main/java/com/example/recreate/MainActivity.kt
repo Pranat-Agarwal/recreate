@@ -3,6 +3,7 @@ package com.example.recreate
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -29,8 +30,11 @@ class MainActivity : AppCompatActivity() {
 
     private  fun photos(){
         GlobalScope.launch {
-            var json= api.retrofitService.getPhotos()
-            Log.i("MainActivity",json)
+
+            var listphotos = api.retrofitService.getPhotos()
+            var textmain : TextView = findViewById(R.id.tvHome)
+            textmain.setText(listphotos.get(1).imgsrc)
+            Log.i("MainActivity",listphotos.size.toString())
         }
     }
 
