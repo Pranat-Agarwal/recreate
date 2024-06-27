@@ -51,6 +51,11 @@ class MainActivity : AppCompatActivity() {
             viewmodal.increamentcount()
             binding.textView.setText(viewmodal.count)
         }
+
+        binding.buttontimer.setOnClickListener(){
+            viewmodal.starttimer()
+            binding.textView.setText(viewmodal.seconds)
+        }
     }
 
     private fun finditemid(id : Int){
