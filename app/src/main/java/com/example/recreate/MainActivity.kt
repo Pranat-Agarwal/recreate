@@ -12,6 +12,7 @@ import com.example.recreate.databinding.ActivityMainBinding
 
 import com.example.recreate.kotlin.database
 import com.example.recreate.kotlin.itemdao
+import com.example.recreate.kotlin.mainviewmodalclass
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.filter
@@ -25,6 +26,7 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var binding : ActivityMainBinding
     lateinit var dao:itemdao
+    lateinit var viewmodal : mainviewmodalclass
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -34,13 +36,20 @@ class MainActivity : AppCompatActivity() {
             setContentView(view)
             var database=database.getdatabase(this)
             dao=database.itemdao()
+        viewmodal = ViewModelProvider(this)[mainviewmodalclass::class.java]
 
+        binding.textView.setText(""+viewmodal.count)
             binding.button.setOnClickListener{
                 insertdatadb()
             }
 
         binding.buttonfind.setOnClickListener{
             finditemid(21)
+        }
+
+        binding.button2.setOnClickListener{
+            viewmodal.increamentcount()
+            binding.textView.setText(viewmodal.count)
         }
     }
 
