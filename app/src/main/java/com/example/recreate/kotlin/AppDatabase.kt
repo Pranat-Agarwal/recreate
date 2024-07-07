@@ -3,11 +3,14 @@ package com.example.recreate.kotlin
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import androidx.room.TypeConverters
 import android.content.Context
+import androidx.databinding.adapters.Converters
 
-@Database(entities = [Student::class], version = 1)
+@Database(entities = [Contact::class], version = 1, exportSchema = false)
+@TypeConverters(Converters::class)
 abstract class AppDatabase : RoomDatabase() {
-    abstract fun studentDao(): StudentDao
+    abstract fun contactDao(): ContactDao
 
     companion object {
         @Volatile
@@ -18,7 +21,7 @@ abstract class AppDatabase : RoomDatabase() {
                 val instance = Room.databaseBuilder(
                     context.applicationContext,
                     AppDatabase::class.java,
-                    "app_database"
+                    "contact_database"
                 ).build()
                 INSTANCE = instance
                 instance
